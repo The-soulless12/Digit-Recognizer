@@ -22,22 +22,21 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
 <table>
   <thead>
     <tr>
-      <th>Modèle du CNN</th>
-      <th>Couches convolutionnelles</th>
-      <th>Filtres par couche</th>
-      <th>Taille du noyau</th>
-      <th>Padding</th>
-      <th>Batch Normalization</th>
-      <th>Couche de sortie</th>
+      <th align="center">Modèle du CNN</th>
+      <th align="center">Couches convolutionnelles</th>
+      <th align="center">Filtres par couche</th>
+      <th align="center">Taille du noyau</th>
+      <th align="center">Padding</th>
+      <th align="center">Batch Normalization</th>
+      <th align="center">Couche de sortie</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td><strong>CNN 3×3</strong></td><td>10</td><td>16 → 176</td><td>3×3</td><td>valid</td><td>Après chaque conv</td><td>Softmax (10)</td></tr>
-    <tr><td><strong>CNN 5×5</strong></td><td>5</td><td>32 → 160</td><td>5×5</td><td>valid</td><td>Après chaque conv</td><td>Softmax (10)</td></tr>
-    <tr><td><strong>CNN 7×7</strong></td><td>4</td><td>48 → 192</td><td>7×7</td><td>valid</td><td>Après chaque conv</td><td>Softmax (10)</td></tr>
+    <tr><td align="center"><strong>CNN 3×3</strong></td><td align="center">10</td><td align="center">16 → 176</td><td align="center">3×3</td><td align="center">valid</td><td align="center">Après chaque conv</td><td align="center">Softmax (10)</td></tr>
+    <tr><td align="center"><strong>CNN 5×5</strong></td><td align="center">5</td><td align="center">32 → 160</td><td align="center">5×5</td><td align="center">valid</td><td align="center">Après chaque conv</td><td align="center">Softmax (10)</td></tr>
+    <tr><td align="center"><strong>CNN 7×7</strong></td><td align="center">4</td><td align="center">48 → 192</td><td align="center">7×7</td><td align="center">valid</td><td align="center">Après chaque conv</td><td align="center">Softmax (10)</td></tr>
   </tbody>
 </table>
-</div>
 
 - Chaque modèle a été entraîné sur un maximum de **150 epochs** sur Google Colab avec une accélération GPU T4, en utilisant un batch size de 120 (500 itérations par epochs) ainsi que deux callbacks. Le EarlyStopping (patience = 12 et basé sur la val_accuracy) et le LearningRateScheduler qui réduit le taux d’apprentissage de 2 % à chaque epoch. Le tableau suivant résume les performances obtenues pour chaque modèle :
 
