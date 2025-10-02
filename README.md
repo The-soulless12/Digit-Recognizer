@@ -31,9 +31,9 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
     </tr>
   </thead>
   <tbody>
-    <tr><td align="center"><strong>CNN 3×3</strong></td><td align="center">10</td><td align="center">16,32,48,… 160</td><td align="center">3×3</td><td align="center">Après chaque conv + avant dense</td><td align="center">Softmax (10)</td></tr>
-    <tr><td align="center"><strong>CNN 5×5</strong></td><td align="center">5</td><td align="center">32,64,96,128,160</td><td align="center">5×5</td><td align="center">Après chaque conv + avant dense</td><td align="center">Softmax (10)</td></tr>
-    <tr><td align="center"><strong>CNN 7×7</strong></td><td align="center">4</td><td align="center">48,96,144,192</td><td align="center">7×7</td><td align="center">Après chaque conv + avant dense</td><td align="center">Softmax (10)</td></tr>
+    <tr><td align="center"><strong>CNN 3×3</strong></td><td align="center">10</td><td align="center">16, 32, 48, … 160</td><td align="center">3×3</td><td align="center">Après chaque conv + avant dense</td><td align="center">Softmax (10)</td></tr>
+    <tr><td align="center"><strong>CNN 5×5</strong></td><td align="center">5</td><td align="center">32, 64, 96, 128 & 160</td><td align="center">5×5</td><td align="center">Après chaque conv + avant dense</td><td align="center">Softmax (10)</td></tr>
+    <tr><td align="center"><strong>CNN 7×7</strong></td><td align="center">4</td><td align="center">48, 96, 144 & 192</td><td align="center">7×7</td><td align="center">Après chaque conv + avant dense</td><td align="center">Softmax (10)</td></tr>
   </tbody>
 </table>
 </div>
