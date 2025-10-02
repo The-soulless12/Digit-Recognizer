@@ -22,7 +22,7 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
 <table>
   <thead>
     <tr>
-      <th>Modèle</th>
+      <th>Modèle du CNN</th>
       <th>Couches convolutionnelles</th>
       <th>Filtres par couche</th>
       <th>Taille du noyau</th>
@@ -32,8 +32,8 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
     </tr>
   </thead>
   <tbody>
-    <tr><td><strong>CNN-3×3</strong></td><td>10</td><td>16 → 176</td><td>3×3</td><td>valid</td><td>Après chaque conv</td><td>Softmax (10)</td></tr>
-    <tr><td><strong>CNN-5×5</strong></td><td>5</td><td>32 → 160</td><td>5×5</td><td>valid</td><td>Après chaque conv</td><td>Softmax (10)</td></tr>
-    <tr><td><strong>CNN-7×7</strong></td><td>4</td><td>48 → 192</td><td>7×7</td><td>valid</td><td>Après chaque conv</td><td>Softmax (10)</td></tr>
+    <tr><td><strong>CNN 3×3</strong></td><td>10</td><td>16 → 176</td><td>3×3</td><td>valid</td><td>Après chaque conv</td><td>Softmax (10)</td></tr>
+    <tr><td><strong>CNN 5×5</strong></td><td>5</td><td>32 → 160</td><td>5×5</td><td>valid</td><td>Après chaque conv</td><td>Softmax (10)</td></tr>
+    <tr><td><strong>CNN 7×7</strong></td><td>4</td><td>48 → 192</td><td>7×7</td><td>valid</td><td>Après chaque conv</td><td>Softmax (10)</td></tr>
   </tbody>
 </table>
