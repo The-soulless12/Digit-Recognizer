@@ -11,7 +11,7 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
 
 # Prérequis
 - Python 3.x  
-- Packages nécessaires : numpy, tensorflow, keras, matplotlib, scikit-learn, pillow & tkinter.
+- Les packages : numpy, tensorflow, keras, matplotlib, scikit-learn, pillow & tkinter.
 
 # Note
 - Pour exécuter le projet, saisissez la commande ``python main.py`` dans votre terminal à partir du répertoire ``interface/``.
@@ -26,15 +26,14 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
       <th align="center">Couches convolutionnelles</th>
       <th align="center">Filtres par couche</th>
       <th align="center">Taille du noyau</th>
-      <th align="center">Padding</th>
       <th align="center">Batch Normalization</th>
       <th align="center">Couche de sortie</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td align="center"><strong>CNN 3×3</strong></td><td align="center">10</td><td align="center">16 → 176</td><td align="center">3×3</td><td align="center">valid</td><td align="center">Après chaque conv</td><td align="center">Softmax (10)</td></tr>
-    <tr><td align="center"><strong>CNN 5×5</strong></td><td align="center">5</td><td align="center">32 → 160</td><td align="center">5×5</td><td align="center">valid</td><td align="center">Après chaque conv</td><td align="center">Softmax (10)</td></tr>
-    <tr><td align="center"><strong>CNN 7×7</strong></td><td align="center">4</td><td align="center">48 → 192</td><td align="center">7×7</td><td align="center">valid</td><td align="center">Après chaque conv</td><td align="center">Softmax (10)</td></tr>
+    <tr><td align="center"><strong>CNN 3×3</strong></td><td align="center">10</td><td align="center">16,32,48,… 160</td><td align="center">3×3</td><td align="center">Après chaque conv + avant dense</td><td align="center">Softmax (10)</td></tr>
+    <tr><td align="center"><strong>CNN 5×5</strong></td><td align="center">5</td><td align="center">32,64,96,128,160</td><td align="center">5×5</td><td align="center">Après chaque conv + avant dense</td><td align="center">Softmax (10)</td></tr>
+    <tr><td align="center"><strong>CNN 7×7</strong></td><td align="center">4</td><td align="center">48,96,144,192</td><td align="center">7×7</td><td align="center">Après chaque conv + avant dense</td><td align="center">Softmax (10)</td></tr>
   </tbody>
 </table>
 </div>
