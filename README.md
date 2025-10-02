@@ -39,7 +39,7 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
 </div>
 
 - L’idée de ces trois CNNs est d’explorer trois approches différentes. Le 3×3 mise sur la profondeur avec de nombreuses petites convolutions, le 5×5 cherche un équilibre avec des convolutions intermédiaires et des filtres croissants tandis que le 7×7 privilégie la largeur avec de grands noyaux pour capter rapidement les motifs globaux.
-- Chaque modèle a ensuite été entraîné sur un maximum de 150 epochs sur Google Colab avec une accélération GPU T4 et ce, en utilisant un batch size de 120 (500 itérations par epochs) ainsi que deux callbacks : Le EarlyStopping (patience = 12 et basé sur la val_accuracy) et le LearningRateScheduler qui réduit le taux d’apprentissage de 2 % à chaque epoch. Le tableau suivant résume les performances obtenues pour chaque modèle :
+- Chaque modèle a ensuite été entraîné sur un maximum de 150 epochs sur Google Colab avec une accélération GPU T4 et ce, en utilisant un batch size de 120 images (500 itérations par epochs) ainsi que deux callbacks : Le EarlyStopping (patience = 12 et basé sur la val_accuracy) et le LearningRateScheduler qui réduit le taux d’apprentissage de 2 % à chaque epoch. Le tableau suivant résume les performances obtenues pour chaque modèle :
 
 <div align="center">
 <table>
