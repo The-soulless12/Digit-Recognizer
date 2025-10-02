@@ -52,9 +52,9 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
     </tr>
   </thead>
   <tbody>
-    <tr><td align="center"><strong>CNN 3×3</strong></td><td align="center">46</td><td align="center">1116,77</td><td align="center">99,57</td></tr>
-    <tr><td align="center"><strong>CNN 5×5</strong></td><td align="center">36</td><td align="center">790,39</td><td align="center">99,45</td></tr>
-    <tr><td align="center"><strong>CNN 7×7</strong></td><td align="center">50</td><td align="center">1043,47</td><td align="center">99,59</td></tr>
+    <tr><td align="center"><strong>CNN 3×3</strong></td><td align="center">46 / 150</td><td align="center">1116,77</td><td align="center">99,57</td></tr>
+    <tr><td align="center"><strong>CNN 5×5</strong></td><td align="center">36 / 150</td><td align="center">790,39</td><td align="center">99,45</td></tr>
+    <tr><td align="center"><strong>CNN 7×7</strong></td><td align="center">50 / 150</td><td align="center">1043,47</td><td align="center">99,59</td></tr>
   </tbody>
 </table>
 </div>
