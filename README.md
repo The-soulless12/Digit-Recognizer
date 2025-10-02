@@ -37,3 +37,24 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
     <tr><td><strong>CNN 7×7</strong></td><td>4</td><td>48 → 192</td><td>7×7</td><td>valid</td><td>Après chaque conv</td><td>Softmax (10)</td></tr>
   </tbody>
 </table>
+
+- Chaque modèle a été entraîné sur un maximum de **150 epochs** sur Google Colab avec une accélération GPU T4, en utilisant un batch size de 120 (500 itérations par epochs) ainsi que deux callbacks. Le EarlyStopping (patience = 12 et basé sur la val_accuracy) et le LearningRateScheduler qui réduit le taux d’apprentissage de 2 % à chaque epoch. Le tableau suivant résume les performances obtenues pour chaque modèle :
+
+<div align="center">
+<table>
+  <thead>
+    <tr>
+      <th>Modèle</th>
+      <th>Époque arrêtée (EarlyStopping)</th>
+      <th>Temps d’exécution (s)</th>
+      <th>Précision atteinte</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>CNN 3×3</strong></td><td>46</td><td>1116,77</td><td>99,57 %</td></tr>
+    <tr><td><strong>CNN 5×5</strong></td><td>36</td><td>790,39</td><td>99,45 %</td></tr>
+    <tr><td><strong>CNN 7×7</strong></td><td>50</td><td>1043,47</td><td>99,59 %</td></tr>
+  </tbody>
+</table>
+
+- L’accuracy globale a été ensuite calculée en faisant la moyenne des vecteurs de sortie softmax des trois modèles tout en comparant la classe prédite finale avec les labels réels.
