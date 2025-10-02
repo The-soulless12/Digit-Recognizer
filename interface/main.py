@@ -1,5 +1,7 @@
 import tkinter as tk
 import numpy as np
+from PIL import ImageFilter
+from PIL import Image, ImageTk
 
 GRID_SIZE = 28
 CELL_SIZE = 15
@@ -7,8 +9,8 @@ CELL_SIZE = 15
 class DrawingApp:
     def __init__(self, master):
         self.master = master
-        master.title("🖌️ Reconnaissance de chiffres - MNIST")
-        master.configure(bg="#f0f0f0")
+        master.title("DIGIT RECOGNIZER")
+        master.configure(bg="#ffc5d4")
 
         self.drawing = True
         self.cells = np.zeros((GRID_SIZE, GRID_SIZE), dtype=np.float32)
@@ -16,16 +18,12 @@ class DrawingApp:
 
         master.resizable(False, False)
 
-        # --- Topbar avec image effacer --- #
-        self.topbar = tk.Frame(master, bg="#f0f0f0", height=1)
+        self.topbar = tk.Frame(master, bg="#ffc5d4", height=1)
         self.topbar.pack(fill="x", pady=(2,0), ipady=0)
         self.topbar.grid_columnconfigure(0, weight=1)
 
-        from PIL import Image, ImageTk
         img = Image.open("../interface/effacer.png").resize((32, 32), Image.Resampling.LANCZOS).convert("RGBA")
 
-        # légère ombre réduite
-        from PIL import ImageFilter
         shadow = Image.new("RGBA", (36, 36), (0,0,0,0))
         mask = img.split()[-1]
         shadow.paste((0,0,0,90), (2,2), mask)
@@ -35,33 +33,34 @@ class DrawingApp:
 
         self.clear_button = tk.Button(
             self.topbar, command=self.clear_grid, image=self.effacer_img,
-            borderwidth=0, highlightthickness=0, bg="#f0f0f0", activebackground="#f0f0f0",
+            borderwidth=0, highlightthickness=0, bg="#ffc5d4", activebackground="#ffc5d4",
             relief="flat", cursor="hand2"
         )
         self.clear_button.grid(row=0, column=1, sticky="e", padx=(0, 20))
 
-        # --- Grille de dessin --- #
+        # Grille principale
         self.canvas = tk.Canvas(master, width=GRID_SIZE*CELL_SIZE, height=GRID_SIZE*CELL_SIZE,
                                 bg="#ffffff", highlightthickness=0)
         self.canvas.pack(padx=20, pady=10)
         self.draw_grid()
         self.canvas.bind('<B1-Motion>', self.on_mouse_drag)
 
-        # --- Zone prédictions --- #
-        self.bottom_frame = tk.Frame(master, bg="#f0f0f0")
+        # Prédictions
+        self.bottom_frame = tk.Frame(master, bg="#ffc5d4")
         self.bottom_frame.pack(pady=10)
 
-        self.pred_canvas = tk.Canvas(self.bottom_frame, width=10*40, height=60, bg="#f0f0f0", highlightthickness=0)
+        box_size = 20  
+        self.pred_canvas = tk.Canvas(self.bottom_frame, width=10*box_size, height=45, bg="#ffc5d4", highlightthickness=0)
         self.pred_canvas.pack(side="left")
         self.pred_boxes = []
+
         for i in range(10):
-            x0, y0 = i*40, 0
-            x1, y1 = x0+40, 40
+            x0, y0 = i*box_size, 0
+            x1, y1 = x0+box_size, box_size
             box = self.pred_canvas.create_rectangle(x0, y0, x1, y1, fill="white", outline="black", width=2)
-            self.pred_canvas.create_text(x0+20, y1+15, text=str(i), font=("Comic Sans MS", 11))
+            self.pred_canvas.create_text(x0+box_size/2, y1+12, text=str(i), font=("Comic Sans MS", 9))
             self.pred_boxes.append(box)
 
-        # Charger les modèles
         try:
             from tensorflow.keras.models import load_model
             self.model_3 = load_model("../model/Model-3x3-99.57.keras")
@@ -111,14 +110,11 @@ class DrawingApp:
         ensemble_pred = (pred_3 + pred_5 + pred_7) / 3
         probs = ensemble_pred.flatten()
 
-        # reset
         for box in self.pred_boxes:
             self.pred_canvas.itemconfig(box, fill="white")
 
-        # top1 uniquement
         best_idx = int(np.argmax(probs))
-        self.pred_canvas.itemconfig(self.pred_boxes[best_idx], fill="#ff8ed6")  # rose pastel
-
+        self.pred_canvas.itemconfig(self.pred_boxes[best_idx], fill="#ff0da6")
 
 if __name__ == "__main__":
     root = tk.Tk()
