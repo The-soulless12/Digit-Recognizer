@@ -48,13 +48,13 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
       <th>Modèle</th>
       <th>Époque arrêtée (EarlyStopping)</th>
       <th>Temps d’exécution (s)</th>
-      <th>Précision atteinte</th>
+      <th>Accuracy (%)</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td><strong>CNN 3×3</strong></td><td>46</td><td>1116,77</td><td>99,57 %</td></tr>
-    <tr><td><strong>CNN 5×5</strong></td><td>36</td><td>790,39</td><td>99,45 %</td></tr>
-    <tr><td><strong>CNN 7×7</strong></td><td>50</td><td>1043,47</td><td>99,59 %</td></tr>
+    <tr><td><strong>CNN 3×3</strong></td><td>46</td><td>1116,77</td><td>99,57</td></tr>
+    <tr><td><strong>CNN 5×5</strong></td><td>36</td><td>790,39</td><td>99,45</td></tr>
+    <tr><td><strong>CNN 7×7</strong></td><td>50</td><td>1043,47</td><td>99,59</td></tr>
   </tbody>
 </table>
 </div>
