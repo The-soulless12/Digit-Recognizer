@@ -23,7 +23,7 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
   <thead>
     <tr>
       <th align="center">Nom du modèle</th>
-      <th align="center">Couches convolutionnelles</th>
+      <th align="center">Nombre de couches convolutionnelles</th>
       <th align="center">Filtres par couche</th>
       <th align="center">Taille du noyau</th>
       <th align="center">Batch Normalization</th>
