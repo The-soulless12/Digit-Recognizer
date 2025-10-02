@@ -22,7 +22,7 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
 <table>
   <thead>
     <tr>
-      <th align="center">Modèle du CNN</th>
+      <th align="center">Nom du modèle</th>
       <th align="center">Couches convolutionnelles</th>
       <th align="center">Filtres par couche</th>
       <th align="center">Taille du noyau</th>
@@ -39,14 +39,14 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
 </table>
 </div>
 
-- Chaque modèle a été entraîné sur un maximum de **150 epochs** sur Google Colab avec une accélération GPU T4, en utilisant un batch size de 120 (500 itérations par epochs) ainsi que deux callbacks. Le EarlyStopping (patience = 12 et basé sur la val_accuracy) et le LearningRateScheduler qui réduit le taux d’apprentissage de 2 % à chaque epoch. Le tableau suivant résume les performances obtenues pour chaque modèle :
+- Chaque modèle a ensuite été entraîné sur un maximum de **150 epochs** sur Google Colab avec une accélération GPU T4 en utilisant un batch size de 120 (500 itérations par epochs) ainsi que deux callbacks : Le EarlyStopping (patience = 12 et basé sur la val_accuracy) et le LearningRateScheduler qui réduit le taux d’apprentissage de 2 % à chaque epoch. Le tableau suivant résume les performances obtenues pour chaque modèle :
 
 <div align="center">
 <table>
   <thead>
     <tr>
       <th align="center">Modèle</th>
-      <th align="center">Époque arrêtée (EarlyStopping)</th>
+      <th align="center">EarlyStopping à l'epoch</th>
       <th align="center">Temps d’exécution (s)</th>
       <th align="center">Accuracy (%)</th>
     </tr>
@@ -59,4 +59,4 @@ Application graphique en Python capable de reconnaître en temps réel les chiff
 </table>
 </div>
 
-- L’accuracy globale a été ensuite calculée en faisant la moyenne des vecteurs de sortie softmax des trois modèles tout en comparant la classe prédite finale avec les labels réels.
+- Pour finir, l’accuracy globale a été calculée en faisant la moyenne des vecteurs de sortie softmax des trois modèles tout en comparant la classe prédite finale avec les labels réels.
